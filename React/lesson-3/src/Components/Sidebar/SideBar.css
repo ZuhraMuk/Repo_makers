@@ -1,0 +1,19 @@
+.sidebar {
+  width: 300px;
+  height: 600px;
+  background-color: rgb(188, 113, 254);
+}
+
+.example1 {
+  width: 350px;
+  height: 450px;
+  background-color: khaki;
+  border-radius: 25px;
+}
+
+.example2 {
+  width: 400px;
+  height: 250px;
+  background-color: aqua;
+  border: 3px solid red;
+}

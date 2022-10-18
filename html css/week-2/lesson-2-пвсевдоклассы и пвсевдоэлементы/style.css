@@ -1,0 +1,192 @@
+/* псевдоклассы и псевдоэлементы */
+
+/* :hover отраббатывает при наведении */
+/* div {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+} */
+/* div:hover {
+background-color: aqua;
+transition: 1s;
+} */
+
+/* :visited при посещении ссылки */
+/* a:visited {
+    color: #706e6e;
+} */
+
+/* :active подсвечивает элемент в момент нажатии */
+/* a:active {
+color: black;
+}
+.block {
+    background-color: violet;
+    width: 100px;
+    height: 100px;
+}
+.block:active {
+    background-color: blue;
+    transition: 5s;
+} */
+
+/* :first-child/nth-child()/last-child обращеннние к определенным елементам родительского - состава */
+/* ul {
+    list-style-type: none;
+}
+div {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li:first-child > div {
+background-color: aqua;
+}
+li:nth-child(3) > div {
+background-color: green;
+}
+li:last-child > div {
+    background-color: blue;
+} */
+
+/* псевдоэлементы */
+
+/*  */
+/* ul {
+    list-style-type: disc;
+}
+
+ul li::marker{
+    color: rgb(164, 36, 36);
+} */
+
+/* :focus - отрабатывает при фокусе на элементе */
+/* input {
+    background-color: black;
+    border: 2px  solid red;
+    border-radius: 10px;
+    color: red;
+    transition: 0.8s;
+}
+input:focus {
+    background-color: aqua;
+    transition: 0.8s;
+} */
+
+/* :not задает стили всему что не содержит данный селектор */
+/* .div-1, .div-2 {
+    width: 100px;
+    height: 100px;
+    margin: 5px 0;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+div:not(.div-2) {
+    background-color: aqua;
+} */
+
+/* :valid,:invalid проверка данных в input */
+
+/*  проверка на правильность данных по типу */
+/* input:valid {
+    background-color: green;
+} */
+/* если введены неправильно данные */
+/* input:invalid {
+    background-color: red;
+} */
+
+/* Псевдоэлементы  */
+
+/* ::befor/::after */
+/* h1::before {контент до основного контента
+    content: "-";
+ }
+ h1::after {после основного контента
+    content: "!";
+ } */
+
+/* ::selection применяет стили к выделенному тексту */
+/* p::selection{
+    color: red;
+    background-color: black;
+} */
+
+/* ::first-letter применяет стиль к первому  */
+/* h1::first-letter{
+    color: brown;
+} */
+
+/* first-line */
+/* p::first-line {
+    color: brown;
+    font-size: 30px;
+} */
+/* :even-нчет.odd-нечет числам применяет стили */
+/* li:nth-child(even) {
+  color: aqua;
+} */
+/* li:nth-child(3n) {
+  color: red;
+} */
+/* li:nth-child(3n + 10) {
+  color: red;
+} */
+
+a:visited {
+  color: rgb(3, 3, 3);
+}
+a:hover {
+  color: red;
+}
+/* button:hover {
+  display: none;
+} */
+/* li:first-child {
+  background-color: pink;
+}
+li:last-child {
+  background-color: lightgreen;
+}
+li:nth-child(2) {
+  background-color: aquamarine;
+} */
+ul {
+  list-style: none;
+}
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.breadcrumbs li + li::before {
+  content: "/";
+  padding: 0 5px;
+}
+.breadcrumbs li::after {
+  content: "*";
+  padding: 0 7px;
+}
+button {
+  padding: 20px 30px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: rgb(80, 250, 179);
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+button:hover {
+  background-color: rgb(67, 188, 138);
+}
