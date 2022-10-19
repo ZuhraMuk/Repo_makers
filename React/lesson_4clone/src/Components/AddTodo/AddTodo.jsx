@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddTodo = ({ handleTask }) => {
   const [inpTask, setInpTask] = useState("");
+  //   console.log(inpTask);
+  //   console.log(Date.now());
 
-  //! State <===== setState ======> React
+  // state <==== setState ====> React
 
   function handleAdd() {
     if (!inpTask.trim()) {
-      toast.error("Заполните поле!😾", {
+      // alert("Заполните поле");
+      toast.error("Заполните поле", {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -22,14 +23,12 @@ const AddTodo = ({ handleTask }) => {
         progress: undefined,
         theme: "light",
       });
-
       return;
     }
     let newTask = {
       task: inpTask,
       id: Date.now(),
     };
-
     handleTask(newTask);
     setInpTask("");
   }
@@ -41,7 +40,7 @@ const AddTodo = ({ handleTask }) => {
           value={inpTask}
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
-          onChange={e => setInpTask(e.target.value)}
+          onChange={(e) => setInpTask(e.target.value)}
         />
         <Button variant="success" onClick={handleAdd}>
           Add

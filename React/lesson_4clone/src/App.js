@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddTodo from "./Components/AddTodo/AddTodo";
-import Children from "./Components/Chidren/Children";
+import Children from "./Components/Children/Children";
 import NavScrollExample from "./Components/Navbar/Navbar";
 import TodoList from "./Components/TodoList/TodoList";
 import UpdateTodo from "./Components/UpdateTodo/UpdateTodo";
@@ -8,23 +8,24 @@ import UpdateTodo from "./Components/UpdateTodo/UpdateTodo";
 const App = () => {
   const [taskArr, setTaskArr] = useState([]);
   const [show, setShow] = useState(false);
-  const [oneEditTask, setOneEditedTask] = useState({});
+  const [oneEditTask, setOneEditTask] = useState({});
   console.log(oneEditTask);
+
   function handleTask(objTask) {
     let newTodo = [...taskArr];
     newTodo.push(objTask);
     setTaskArr(newTodo);
-    // console.log(taskArr);
   }
+
   function clickDelete(id) {
-    let newTaskArr = taskArr.filter(item => {
+    let newTaskArr = taskArr.filter((item) => {
       return item.id !== id;
     });
-    // console.log(newTaskArr);
     setTaskArr(newTaskArr);
   }
 
-  //modal
+  // modal
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -38,7 +39,7 @@ const App = () => {
         taskArr={taskArr}
         clickDelete={clickDelete}
         handleShow={handleShow}
-        setOneEditedTask={setOneEditedTask}
+        setOneEditTask={setOneEditTask}
       />
       <UpdateTodo handleClose={handleClose} show={show} />
     </div>
@@ -46,4 +47,3 @@ const App = () => {
 };
 
 export default App;
-//useEffect-тема
