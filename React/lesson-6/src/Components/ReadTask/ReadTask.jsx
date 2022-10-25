@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { taskContext } from "../../context/TodoContext";
 
 const ReadTask = () => {
-  const { readTask, taskArr } = useContext(taskContext);
+  const { readTask, taskArr, deleteTask } = useContext(taskContext);
   useEffect(() => {
     readTask();
   }, []);
@@ -10,7 +10,10 @@ const ReadTask = () => {
   return (
     <ul>
       {taskArr.map((item, index) => (
-        <li key={index}>{item.task}</li>
+        <>
+          <li key={index}>{item.task}</li>
+          <button onClick={() => deleteTask()}>delete</button>
+        </>
       ))}
     </ul>
   );

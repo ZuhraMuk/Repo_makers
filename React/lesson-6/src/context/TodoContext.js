@@ -23,10 +23,17 @@ const TodoContextProvider = ({ children }) => {
     setTaskArr(data);
   }
 
+  //delete task
+  async function deleteTask(id) {
+    await axios.delete(`${API}/${id}`);
+    readTask();
+  }
+
   const cloud = {
     addTask,
     readTask,
     taskArr,
+    deleteTask,
   };
   return <taskContext.Provider value={cloud}>{children}</taskContext.Provider>;
 };
